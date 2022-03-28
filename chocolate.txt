@@ -1,0 +1,20 @@
+Web challenge chocolate
+
+Website is empty, scaning reveals only one URL with this text:
+
+http://143.198.224.219:11111
+My nephew is a fussy eater and is only willing to eat chocolate oreo. Any other flavour and he throws a tantrum.
+
+After inspection, the website leaves a cookie in the local storage, so we ca use Burp suite to decrypt the value.
+
+The cookie is named 'flavour' with value 'c3RyYXdiZXJyeQ%3D%3D'
+
+It's encoded with base64, the decoded value is 'base64encoded chocolate'
+
+After verification it's not the right flag.
+
+We use Burp suite to change the cookie value to the decoded phrase and reload page with it.
+
+Website displays OFPPT-CTF{C00k13s_n33d_ch0c0l4t3_fl4v0r}
+
+Flag: OFPPT-CTF{C00k13s_n33d_ch0c0l4t3_fl4v0r}

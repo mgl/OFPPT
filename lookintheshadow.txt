@@ -1,0 +1,17 @@
+Steganography challenge:
+
+We download an image named LookInTheShadows.jpg
+
+We use stegseek with the rockyou list to crack the data hidden in the image
+https://github.com/RickdeJager/stegseek
+
+$ stegseek LookInTheShadows.jpg ./rockyou.txt
+
+We get the filename:
+    [i] Found passphrase: ""
+    [i] Found original filename: "secret.txt"
+    [i] Extracting to "LookInTheShadows.jpg.out"
+
+The secret.txt file contains "OFPPT-CTF{3mb3dd3d_H1dd3n_73x7_d4t4}"
+
+Flag: OFPPT-CTF{3mb3dd3d_H1dd3n_73x7_d4t4}

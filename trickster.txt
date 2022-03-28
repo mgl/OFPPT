@@ -1,0 +1,14 @@
+         Trickster challenge:
+
+This is a python game!
+
+We play a child, the goal is to dodge the reaper.
+
+If the reaper touches the player, game is lost.
+
+The flag is not in clear in the code, but we modify the game so we never collide with the reaper :)
+
+After we deleted the collision code, we play long enough to dodge 100 times the reaper and get the flag:
+
+$ python game.py
+flag{CaNT_ch34t_d34th}

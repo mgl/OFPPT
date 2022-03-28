@@ -1,0 +1,25 @@
+Headache challenge
+
+We get a zip file named headache.zip
+
+The password is 0FPP7C7F
+
+The extracted file is flag.ache
+
+After inspection it's a CACHE file and should be ending in .cache.
+
+Fortunately we can open it:
+https://filext.com/file-extension/CACHE
+
+It contains the following:
+
+++++++++++[>+>+++>+++++++>++++++++++<<<<-]>>>+++++++++.---------.++++++++++..++++.<+++++++++++++++.>-----------------.>----------------.<+++.>+++++++++++++++++++++++++++++++++++++++.<<++++++.>>--------.----.+++++.<<.>>--.<<--.>>---------------.----.<<++.>>+++++++++++++++.-----------.+++++++++++++++.+++++++.---------.<<++++.------.-.>>--.---------------.<<+.++++++++..------.>>++++++++++++++++++++++++++++++.
+
+This is brainfuck code!
+
+We use an interpreter:
+https://www.dcode.fr/langage-brainfuck
+
+It gives us the flag:
+
+OFPPT-CTF{3sot3r1c_3ncryp710n_1993}

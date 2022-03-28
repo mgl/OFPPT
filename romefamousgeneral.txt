@@ -1,0 +1,15 @@
+Rome famous general
+
+We get the encrypted flag: LRMMS-PSR{d3x3h_p43q4o_p1my3o}
+
+THe challenge tells us tu use the key cipherkey
+
+Reverse cesar cipher gives nothing.
+
+After research, it's encoded using a keyed cesar cipher, the key beeing 'cipherkey'
+
+Using an online solver https://www.boxentriq.com/code-breaking/keyed-caesar-cipher
+
+LRMMS-PSR{d3x3h_p43q4o_p1my3o} -> OFPPT-CTF{k3y3d_c43s4r_c1ph3r}
+
+Flag: OFPPT-CTF{k3y3d_c43s4r_c1ph3r}
